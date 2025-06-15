@@ -1,5 +1,5 @@
 {
-  "name": "@aerobytes/discordfaker",
+  "name": "@heapreaper/discordfaker",
   "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
