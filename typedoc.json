@@ -1,0 +1,9 @@
+{
+  "entryPoints": ["src"],
+  "out": "docs",
+  "tsconfig": "tsconfig.json",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "includeVersion": true,
+  "categorizeByGroup": false
+}

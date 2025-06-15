@@ -14,5 +14,8 @@
   "dependencies": {
     "@types/node": "^22.15.30",
     "discord.js": "^14.19.3"
+  },
+  "devDependencies": {
+    "typedoc": "^0.28.5"
   }
 }
