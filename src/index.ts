@@ -5,11 +5,14 @@ import { fakeMember } from './objects/member.ts';
 import { fakeMessage } from './objects/message.ts';
 import { fakeChannel } from './objects/channel.ts';
 
+/**
+ * Represents a Faker
+ */
 export class Faker {
     /**
      * Validates that a Discord client instance is provided.
      * Throws an error if client is not passed.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
      */
     private static checkClient(client: Client): void {
         if (!client) throw new Error('Client is required for this Faker operation');
@@ -18,7 +21,9 @@ export class Faker {
     /**
      * Emits a simulated guildMemberRemove event with a fake member.
      * Useful for testing event handling of member leaves.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.memberRemove(client);
      */
     static memberRemove(client: Client): void {
         this.checkClient(client);
@@ -28,7 +33,9 @@ export class Faker {
     /**
      * Emits a simulated guildMemberAdd event with a fake member.
      * Useful for testing event handling of member joins.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.MemberAdd(client);
      */
     static MemberAdd(client: Client): void {
         this.checkClient(client);
@@ -38,7 +45,9 @@ export class Faker {
     /**
      * Emits a simulated messageCreate event with a fake message.
      * Useful for testing event handling of new messages.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.messageCreate(client);
      */
     static messageCreate(client: Client): void {
         this.checkClient(client);
@@ -50,7 +59,9 @@ export class Faker {
      * Emits a simulated messageUpdate event with two fake messages:
      * the old message and the updated message.
      * Useful for testing message editing event handling.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.messageEdit(client);
      */
     static messageEdit(client: Client): void {
         this.checkClient(client);
@@ -66,7 +77,9 @@ export class Faker {
     /**
      * Emits a simulated messageDelete event with a fake message.
      * Useful for testing message deletion event handling.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.messageDelete(client);
      */
     static messageDelete(client: Client): void {
         this.checkClient(client);
@@ -78,7 +91,9 @@ export class Faker {
     /**
      * Emits a simulated channelCreate event with a fake channel.
      * Useful for testing event handling when channels are created.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.channelCreate(client);
      */
     static channelCreate(client: Client): void {
         this.checkClient(client);
@@ -89,7 +104,9 @@ export class Faker {
     /**
      * Emits a simulated channelDelete event with a fake channel.
      * Useful for testing event handling when channels are deleted.
-     * @param client - The Discord.js Client instance
+     * @param {Client} client - The Discord.js Client instance
+     * @example
+     * Faker.channelDelete(client);
      */
     static channelDelete(client: Client): void {
         this.checkClient(client);
