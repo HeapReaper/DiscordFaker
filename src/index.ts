@@ -30,7 +30,7 @@ export class Faker {
      * Useful for testing event handling of member joins.
      * @param client - The Discord.js Client instance
      */
-    static memberJoin(client: Client): void {
+    static MemberAdd(client: Client): void {
         this.checkClient(client);
         client.emit('guildMemberAdd', fakeMember(client));
     }
