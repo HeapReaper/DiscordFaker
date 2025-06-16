@@ -2,15 +2,25 @@
 Fake events in Discord.js to cut down on development time!
 
 ## Current available fakes
-- GuildMemberAdd
-- GuildMemberRemove
+- GuildMemberAdd (use it with memberAdd)
+- GuildMemberRemove (use it with memberRemove)
+- messageCreate
+- messageEdit
+- messageDelete
+- channelCreate
+- channelDelete
 
 ## How to use?
 ```ts
 import { Faker } from '@heapreaper/discordfaker';
 
-Faker.memberRemove('632677231113666611', client);
-Faker.memberAdd('632677231113666611', client);
+Faker.memberRemove(client);
+Faker.memberAdd(client);
+Faker.messageCreate(client);
+Faker.messageEdit(client);
+Faker.messageDelete(client);
+Faker.channelCreate(client);
+Faker.channelDelete(client);
 ```
 
 ## License
