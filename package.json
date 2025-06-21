@@ -1,7 +1,12 @@
 {
   "name": "@heapreaper/discordfaker",
-  "version": "1.0.5",
+  "version": "1.1.5",
   "main": "dist/index.js",
+  "keywords": [
+    "Discord.JS",
+    "DiscordJS",
+    "Utils"
+  ],
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
