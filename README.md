@@ -9,6 +9,11 @@ Fake events in Discord.js to cut down on development time!
 - messageDelete
 - channelCreate
 - channelDelete
+- banAdd
+- banRemove
+
+## Current available Spam fakes
+- massMessage
 
 ## How to use?
 ### Faker
@@ -22,6 +27,8 @@ Faker.messageEdit(client);
 Faker.messageDelete(client);
 Faker.channelCreate(client);
 Faker.channelDelete(client);
+Faker.banAdd(client);
+Faker.banRemove(client);
 ```
 
 ### Spam
