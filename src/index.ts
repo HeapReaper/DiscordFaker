@@ -1,6 +1,5 @@
 import {
     Client,
-    GuildBan,
 } from 'discord.js';
 import { fakeMember } from './objects/member.ts';
 import { fakeMessage } from './objects/message.ts';
