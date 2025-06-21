@@ -1,5 +1,6 @@
 import {
     Client,
+    GuildBan,
 } from 'discord.js';
 import { fakeMember } from './objects/member.ts';
 import { fakeMessage } from './objects/message.ts';
@@ -23,7 +24,6 @@ export class Faker {
 
     /**
      * Emits a simulated guildMemberRemove event with a fake member.
-     * Useful for testing event handling of member leaves.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.memberRemove(client);
@@ -36,7 +36,6 @@ export class Faker {
 
     /**
      * Emits a simulated guildMemberAdd event with a fake member.
-     * Useful for testing event handling of member joins.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.MemberAdd(client);
@@ -49,7 +48,6 @@ export class Faker {
 
     /**
      * Emits a simulated messageCreate event with a fake message.
-     * Useful for testing event handling of new messages.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.messageCreate(client);
@@ -64,7 +62,6 @@ export class Faker {
     /**
      * Emits a simulated messageUpdate event with two fake messages:
      * the old message and the updated message.
-     * Useful for testing message editing event handling.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.messageEdit(client);
@@ -83,7 +80,6 @@ export class Faker {
 
     /**
      * Emits a simulated messageDelete event with a fake message.
-     * Useful for testing message deletion event handling.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.messageDelete(client);
@@ -98,7 +94,6 @@ export class Faker {
 
     /**
      * Emits a simulated channelCreate event with a fake channel.
-     * Useful for testing event handling when channels are created.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.channelCreate(client);
@@ -106,13 +101,11 @@ export class Faker {
      */
     static channelCreate(client: Client): void {
         this.checkClient(client);
-
         client.emit('channelCreate', fakeChannel(client));
     }
 
     /**
      * Emits a simulated channelDelete event with a fake channel.
-     * Useful for testing event handling when channels are deleted.
      * @param {Client} client - The Discord.js Client instance.
      * @example
      * Faker.channelDelete(client);
@@ -122,6 +115,32 @@ export class Faker {
         this.checkClient(client);
 
         client.emit('channelDelete', fakeChannel(client));
+    }
+
+    /**
+     * Emits a simulated guildBanAdd event with a fake user.
+     * @param {Client} client - The Discord.js Client instance.
+     * @example
+     * Faker.banAdd(client);
+     * @returns {void}
+     */
+    static banAdd(client: Client): void {
+        this.checkClient(client);
+
+        client.emit('guildBanAdd', fakeMember(client));
+    }
+
+    /**
+     * Emits a simulated guildBanRemove event with a fake user.
+     * @param {Client} client - The Discord.js Client instance.
+     * @example
+     * Faker.banAdd(client);
+     * @returns {void}
+     */
+    static banRemove(client: Client): void {
+        this.checkClient(client);
+
+        client.emit('guildBanRemove', fakeMember(client));
     }
 }
 
