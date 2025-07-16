@@ -23,6 +23,7 @@ export function fakeMember(
         tag: `${username}#${discriminator}`,
         bot: false,
         avatar: null,
+        createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // Three days old
     } as unknown as User;
 
     return {
